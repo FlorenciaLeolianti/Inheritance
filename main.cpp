@@ -656,7 +656,7 @@ void delete_lingkaran()
 			
 		if(!cek)
 		{
-			cout<<"Tidak ada Circle dengan jari-jari X."<<endl;
+			cout<<"Tidak ada Circle dengan jari-jari "<< radius <<"."<<endl;
 		}
 		else
 		{
@@ -733,7 +733,7 @@ void delete_persegi(){
 			
 		if(!cek)
 		{
-			cout<<"Tidak ada Square dengan sisi X.";
+			cout<<"Tidak ada Square dengan sisi " <<sisi<<endl;
 		}
 		else
 		{
@@ -816,14 +816,14 @@ void delete_persegi_panjang(){
 					{
 						cek = true;
 						shapes.erase(shapes.begin()+i);
-						cout<<"Rectangle dengan panjang p dan lebar "<<panjang<<lebar<<" telah di hapus"<<endl;
+						cout<<"Rectangle dengan panjang " << panjang << " dan lebar "<< lebar << "telah di hapus"<<endl;
 					}
 				}
 			}
 		}
 		if(!cek)
 		{
-			cout<<"Tidak ada Rectangle dengan panjang p dan lebar l.";
+			cout<<"Tidak ada Rectangle dengan panjang " <<panjang<< " dan lebar " <<lebar<<endl;
 		}
 			else
 		{
