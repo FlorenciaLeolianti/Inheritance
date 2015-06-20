@@ -320,6 +320,9 @@ void tampil_semua()
 				{
 					shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_semua();
 				break;
 			case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -327,6 +330,9 @@ void tampil_semua()
 				{
 					shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_semua();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -375,6 +381,9 @@ void tampil_lingkaran()
 					if(shapes[i]->getJenisShape()=="Circle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_lingkaran();
 				break;
 				case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -383,6 +392,9 @@ void tampil_lingkaran()
 					if(shapes[i]->getJenisShape()=="Circle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_lingkaran();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -431,6 +443,9 @@ void tampil_persegi()
 					if(shapes[i]->getJenisShape()=="Square")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi();
 				break;
 			case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -439,6 +454,9 @@ void tampil_persegi()
 					if(shapes[i]->getJenisShape()=="Square")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -486,6 +504,9 @@ void tampil_persegi_panjang()
 					if(shapes[i]->getJenisShape()=="Rectangle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi_panjang();
 				break;
 			case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -494,6 +515,9 @@ void tampil_persegi_panjang()
 					if(shapes[i]->getJenisShape()=="Rectangle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi_panjang();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -548,15 +572,7 @@ void savedata()
 		}
 	}
 }
-/*
-void tambahKarakter()
-{
-	string nama;
-	string umur;
-	string alamat;
-	cout << "Masukkan Nama:";
-	cin >> nama;
-*/
+
 void tambah_lingkaran(){
 	fflush stdin;
 	try
