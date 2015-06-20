@@ -5,11 +5,18 @@
 #include <cstdlib>
 #include <algorithm>
 #include <cctype>
+#include <vector>
 
+#include "shape.h"
+#include "rectangle.h"
+#include "circle.h"
+#include "square.h"
 
 using namespace std;
 string input;
 string apalah;
+vector <Shape *> shapes;
+
 
 int main();
 void tampil_bentuk();

@@ -2,8 +2,9 @@
 #define SQUARE_H
 #include "shape.h"
 #include "rectangle.h"
-class Square : Rectangle
+class Square : public Rectangle
 {
+	public:
 	Square();
 	Square(int sisi);
 };

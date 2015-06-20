@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Cirlce::Circle()
+Circle::Circle()
 {
 	jarijari=0;
 }
