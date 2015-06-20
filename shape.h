@@ -12,5 +12,5 @@ class Shape
 	protected:
 		float luas;
 		float keliling;
-}
+};
 #endif

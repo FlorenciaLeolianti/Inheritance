@@ -1,17 +1,18 @@
-#ifndef SHAPE_H
-#define SHAPE_H
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 #include <cstdio>
 #include <iostream>
-
+#include "shape.h"
 using namespace std;
 
 class Rectangle:Shape
 {
 	public: 
+		Rectangle();
 		Rectangle(int panjangBaru, int lebarBaru);
 		void hitungLuas();
 		void hitungKeliling();
-	protected;
+	protected:
 		int panjang;
 		int lebar;
 };
