@@ -1,12 +1,12 @@
 #include <cstdio>
 #include <iostream>
-//#include <windows.h>
 #include <string>
 #include <cstdlib>
 #include <algorithm>
 #include <cctype>
 #include <vector>
 #include <fstream>
+#include <conio.h>
 
 #include "shape.h"
 #include "rectangle.h"
@@ -142,7 +142,8 @@ void main_menu()
 	{
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		main_menu();
 	}
 }
@@ -195,7 +196,8 @@ void tampil_bentuk()
 	{
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		tampil_bentuk();
 	}
 }
@@ -246,7 +248,8 @@ void tambah_bentuk()
 	{
 		cerr << e << endl<< endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		tambah_bentuk();
 	}
 }
@@ -296,7 +299,8 @@ void hapus_bentuk()
 	{
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		hapus_bentuk();
 	}
 }
@@ -328,7 +332,8 @@ void tampil_semua()
 					shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_semua();
 				break;
 			case 2:
@@ -338,7 +343,8 @@ void tampil_semua()
 					shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_semua();
 				break;
 			case 3:
@@ -355,7 +361,8 @@ void tampil_semua()
 	{
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		hapus_bentuk();
 	}
 }
@@ -389,7 +396,8 @@ void tampil_lingkaran()
 						shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_lingkaran();
 				break;
 				case 2:
@@ -400,7 +408,8 @@ void tampil_lingkaran()
 						shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_lingkaran();
 				break;
 			case 3:
@@ -417,7 +426,8 @@ void tampil_lingkaran()
 	{
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		hapus_bentuk();
 	}
 }
@@ -451,7 +461,8 @@ void tampil_persegi()
 						shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_persegi();
 				break;
 			case 2:
@@ -462,7 +473,8 @@ void tampil_persegi()
 						shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_persegi();
 				break;
 			case 3:
@@ -479,7 +491,8 @@ void tampil_persegi()
 	{
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		hapus_bentuk();
 	}
 }
@@ -512,7 +525,8 @@ void tampil_persegi_panjang()
 						shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_persegi_panjang();
 				break;
 			case 2:
@@ -523,7 +537,8 @@ void tampil_persegi_panjang()
 						shapes[i]->printDetails();
 				}
 				cout << "tekan apa saja untuk kembali" << endl;
-				cin >> apalah;
+				fflush stdin;
+				_getch();
 				tampil_persegi_panjang();
 				break;
 			case 3:
@@ -540,7 +555,8 @@ void tampil_persegi_panjang()
 	{
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		hapus_bentuk();
 	}
 }
@@ -596,7 +612,8 @@ void tambah_lingkaran(){
 		{
 		shapes.push_back(new Circle(radius));
 		cout << "data berhasil dimasukkan." << endl << endl << "silahkan tekan apa saja untuk kembali."<<endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		tambah_bentuk();
 		}
 	}
@@ -636,8 +653,17 @@ void delete_lingkaran()
 			
 		if(!cek)
 		{
-			cout<<"Tidak ada Circle dengan jari-jari X.";
+			cout<<"Tidak ada Circle dengan jari-jari X."<<endl;
 		}
+		else
+		{
+			cout << "data berhasil dihapus." << endl;
+		}
+		cout << "tekan apa saja untuk kembali" << endl;
+		fflush stdin;
+		_getch();
+		
+
 	}
 	catch (const char *e)
 	{
@@ -663,7 +689,8 @@ void tambah_persegi(){
 		{
 		shapes.push_back(new Square(sisi));
 		cout << "data berhasil dimasukkan." << endl << endl << "silahkan tekan apa saja untuk kembali."<<endl;
-		cin >> apalah;
+		fflush stdin;
+		_getch();
 		tambah_bentuk();
 		}
 	}
@@ -700,7 +727,8 @@ void tambah_persegi_panjang(){
 	
   		shapes.push_back(new Rectangle(panjang,lebar));
 		cout << "data berhasil dimasukkan." << endl << endl << "silahkan tekan apa saja untuk kembali."<<endl;
-		cin>> apalah;
+		fflush stdin;
+		_getch();
 		tambah_bentuk();
 	}
 	catch (const char* e)
