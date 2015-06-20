@@ -10,3 +10,18 @@ float Shape::getLuas(){
 float Shape::getKeliling(){
 	return keliling;
 }
+
+bool sortByLuas(Shape *a, Shape *b)
+{
+	a->hitungLuas();
+	b->hitungLuas();
+	return a->getLuas()<b->getLuas();
+}
+bool sortByKeliling(Shape *a, Shape *b)
+{
+	a->hitungKeliling();
+	b->hitungKeliling();
+	return a->getKeliling()<b->getKeliling();
+	
+}
+
