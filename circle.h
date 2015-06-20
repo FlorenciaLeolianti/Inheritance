@@ -13,5 +13,5 @@ class Circle:Shape
 		void hitungKeliling();
 	protected:
 		int jarijari;
-}
+};
 #endif
