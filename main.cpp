@@ -31,6 +31,58 @@ void tampil_persegi_panjang();
 //////////////////////////////// M A I N   M E N U ////////////////////////////////////
 int main()
 {
+	ifstream lingkaran("circle.txt");  /// lingkaran
+	int radius;
+	string line;
+	while (lingkaran>>radius)
+		{
+			Circle cir;
+			cir = Circle (radius);
+			//cout << radius << '\n'; // tes load file
+		}
+	lingkaran.close();
+	
+	cout << endl << " isi square.txt" << endl ;
+	 
+	ifstream persegi("square.txt");  /// persegi
+	int sisi;
+	while (persegi>>sisi)
+		{
+			Square s(sisi);
+			//cout << sisi << '\n'; // tes load file
+		}
+
+	persegi.close();
+	
+	cout << endl << " isi rectangle.txt" << endl ;
+	 
+	ifstream persegiPanjang("rectangle.txt");  /// persegi
+	int panjang, lebar;
+	bool cek=true;
+	while (persegiPanjang>>sisi)
+		{
+			if (cek==true)
+			{
+				panjang=sisi;
+				cek = false;
+			}
+			else if (cek==false)
+			{
+				lebar=sisi;
+				cek = true;
+			}
+			
+			Rectangle rect;
+			rect = Rectangle(panjang, lebar);
+			//cout << panjang << '\t' << lebar << '\n'; // tes load file
+		}
+
+	persegiPanjang.close();
+	
+	
+	
+	
+	
 	system("CLS");
 	fflush stdin;
 	cout << "MENU UTAMA"<< endl;
