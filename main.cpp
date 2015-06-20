@@ -632,6 +632,7 @@ void delete_lingkaran()
 				{
 					cek = true;
 					shapes.erase(shapes.begin()+i);
+					cout<<"Circle dengan jari-jari "<<radius<<" telah di hapus"<<endl;
 				}
 			}
 		}
@@ -698,6 +699,7 @@ void delete_persegi(){
 				{
 					cek = true;
 					shapes.erase(shapes.begin()+i);
+					cout<<"Circle dengan jari-jari "<<sisi<<" telah di hapus"<<endl;
 				}
 			}
 		}
@@ -749,5 +751,49 @@ void tambah_persegi_panjang(){
 }
 
 void delete_persegi_panjang(){
-	
+	fflush stdin;
+	try
+	{
+		int panjang, lebar;
+		cout<<"Masukkan panjang yang akan di hapus: "<<endl;
+		if(!(cin >> panjang && panjang>0))
+		{
+			cin.clear();
+			cin.ignore();
+			throw "Maaf, input yang Anda masukkan salah. Silakan coba kembali.";
+		}
+		cout << "Masukkan lebar yang akan di hapus:" << endl;	   	
+		if(!(cin >> lebar && lebar>0)) 
+		{
+            cin.clear();
+            cin.ignore();
+            throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
+		}
+		bool cek = false;
+		for (i=0;i<shapes.size();i++)
+		{
+			if(shapes[i]->getJenisShape()=="Rectangle")
+			{
+				if(((Rectangle*)shapes[i])->getpanjang() == panjang)
+				{
+					if(((Rectangle*)shapes[i])->getlebar()== lebar)
+					{
+						cek = true;
+						shapes.erase(shapes.begin()+i);
+						cout<<"Circle dengan jari-jari "<<panjang<<lebar<<" telah di hapus"<<endl;
+					}
+				}
+			}
+		}
+		if(!cek)
+		{
+			cout<<"Tidak ada Rectangle dengan panjang p dan lebar l.";
+		}
+	}
+	catch (const char *e)
+	{
+		cerr << e << "\n\n";
+		cout << endl;
+		delete_persegi();
+	}
 }
