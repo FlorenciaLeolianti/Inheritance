@@ -4,12 +4,14 @@
 
 using namespace std;
 
-class Circle
+const float PI = 3.1415926;
+class Circle:Shape
 {
 	public:
-		virtual void hitungLuas()=0;
-		virtual void hitungKeliling()=0;
+		Circle(int jarijariBaru);
+		void hitungLuas();
+		void hitungKeliling();
 	protected:
-		float jarijari;
+		int jarijari;
 }
 #endif
