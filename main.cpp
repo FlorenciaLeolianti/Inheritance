@@ -706,7 +706,6 @@ void tambah_persegi(){
 }
 
 void delete_persegi(){
-	system("CLS");
 	fflush stdin;
 	try
 	{
@@ -727,7 +726,7 @@ void delete_persegi(){
 				{
 					cek = true;
 					shapes.erase(shapes.begin()+i);
-					cout<<"Circle dengan jari-jari "<<sisi<<" telah di hapus"<<endl;
+					cout<<"Square dengan sisi "<<sisi<<" telah di hapus"<<endl;
 				}
 			}
 		}
@@ -736,6 +735,14 @@ void delete_persegi(){
 		{
 			cout<<"Tidak ada Square dengan sisi X.";
 		}
+		else
+		{
+			cout << "data berhasil dihapus." << endl;
+		}
+			cout << "tekan apa saja untuk kembali" << endl;
+		fflush stdin;
+		_getch();
+	
 	}
 	catch (const char *e)
 	{
@@ -809,7 +816,7 @@ void delete_persegi_panjang(){
 					{
 						cek = true;
 						shapes.erase(shapes.begin()+i);
-						cout<<"Circle dengan jari-jari "<<panjang<<lebar<<" telah di hapus"<<endl;
+						cout<<"Rectangle dengan panjang p dan lebar "<<panjang<<lebar<<" telah di hapus"<<endl;
 					}
 				}
 			}
@@ -818,11 +825,18 @@ void delete_persegi_panjang(){
 		{
 			cout<<"Tidak ada Rectangle dengan panjang p dan lebar l.";
 		}
+			else
+		{
+			cout << "data berhasil dihapus." << endl;
+		}
+			cout << "tekan apa saja untuk kembali" << endl;
+		fflush stdin;
+		_getch();
 	}
 	catch (const char *e)
 	{
 		cerr << e << "\n\n";
 		cout << endl;
-		delete_persegi();
+		delete_persegi_panjang();
 	}
 }
