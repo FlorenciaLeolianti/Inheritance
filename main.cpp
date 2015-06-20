@@ -27,6 +27,9 @@ void tampil_semua();
 void tampil_lingkaran();
 void tampil_persegi();
 void tampil_persegi_panjang();
+void tambah_lingkaran();
+void tambah_persegi();
+void tambah_persegi_panjang();
 
 
 //////////////////////////////// M A I N   M E N U ////////////////////////////////////
@@ -206,13 +209,13 @@ void tambah_bentuk()
 			switch (pil)
 			{
 			case 1:
-				cout << "tambah link";
+				tambah_lingkaran();
 				break;
 			case 2:
-				cout << "tambah persgi";
+				tambah_persegi();
 				break;
 			case 3:
-				cout << "tambah pp";
+				tambah_persegi_panjang();
 				break;
 			case 4:
 				main();
@@ -471,65 +474,79 @@ void tampil_persegi_panjang()
 		hapus_bentuk();
 	}
 }
-/*
-void tambahKarakter()
-{
-	string nama;
-	string umur;
-	string alamat;
-	cout << "Masukkan Nama:";
-	cin >> nama;
+
+void tambah_lingkaran(){
+	fflush stdin;
 	try
 	{
-		int i=0;
-		char str[100];
-		strcpy (str,nama.c_str());
-  		while (str[i])
-  		{
-    		if (isalpha(str[i]))
-			i++;
-    		else
-			{
-    			throw "Maaf, input yang anda masukkan salah. Silakan coba kembali.";
-				break;
-    		}
-    	}
+	float radius;
+	cout << "Masukkan Jari-jari:" << endl;
+		if(!(cin >> radius)) {
+            cin.clear();
+            cin.ignore();
+            throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
+		   	}
+		else shapes.push_back(new Circle(radius));
 	
-	cout << endl << "Masukkan Umur:";
-	cin >> umur;
-		i=0;
-		strcpy (str,umur.c_str());
-  		while (str[i])
-  		{
-    		if (isdigit(str[i]))
-			i++;
-    		else
-    		{
-    			throw "Maaf, input yang anda masukkan salah. Silakan coba kembali.";
-				break;
-    		}
-    	}
-	
-	cout << endl << "masukkan Alamat:";
-	cin >> alamat;
-		i=0;
-		strcpy (str,alamat.c_str());
-  		while (str[i])
-  		{
-    		if (isalpha(str[i]))
-			i++;
-    		else
-    		{
-    			throw "Maaf, input yang anda masukkan salah. Silakan coba kembali.";
-				break;
-    		}
-    	}
 	}
 	catch (const char* e)
 	{
 		cerr << e << "\n\n";
-		tambahKarakter();
+		cout << endl;
+		tambah_lingkaran();
 	}
-	cout << endl;
 
-}*/
+}
+
+void tambah_persegi(){
+	fflush stdin;
+	try
+	{
+	float sisi;
+	cout << "Masukkan Sisi:" << endl;
+		if(!(cin >> sisi)) {
+            cin.clear();
+            cin.ignore();
+            throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
+		   	}
+		else shapes.push_back(new Square(sisi));
+	
+	}
+	catch (const char* e)
+	{
+		cerr << e << "\n\n";
+		cout << endl;
+		tambah_persegi();
+	}
+}
+
+void tambah_persegi_panjang(){
+	fflush stdin;
+	try
+	{
+	float panjang, lebar;
+	cout << "Masukkan panjang:" << endl;
+		if(!(cin >> panjang)) {
+            cin.clear();
+            cin.ignore();
+            throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
+		   	}
+		else 
+		{
+			if(!(cin >> panjang)) {
+            cin.clear();
+            cin.ignore();
+            throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
+		   		}
+		}
+		
+		shapes.push_back(new Rectangle(panjang,lebar));
+	
+	}
+	catch (const char* e)
+	{
+		cerr << e << "\n\n";
+		cout << endl;
+		tambah_persegi_panjang();
+	}
+}
