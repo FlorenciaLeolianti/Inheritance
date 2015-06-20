@@ -816,7 +816,7 @@ void delete_persegi_panjang(){
 					{
 						cek = true;
 						shapes.erase(shapes.begin()+i);
-						cout<<"Rectangle dengan panjang " << panjang << " dan lebar "<< lebar << "telah di hapus"<<endl;
+						cout<<"Rectangle dengan panjang " << panjang << " dan lebar "<< lebar << " telah di hapus"<<endl;
 					}
 				}
 			}
