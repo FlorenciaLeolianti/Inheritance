@@ -705,6 +705,7 @@ void tambah_persegi(){
 }
 
 void delete_persegi(){
+	system("CLS");
 	fflush stdin;
 	try
 	{
