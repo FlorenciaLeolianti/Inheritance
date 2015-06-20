@@ -31,13 +31,12 @@ void savedata();
 void tambah_lingkaran();
 void tambah_persegi();
 void tambah_persegi_panjang();
-//<<<<<<< HEAD
+
 void delete_lingkaran();
 void delete_square();
 void delete_rectangle();
-//=======
 void main_menu();
-///>>>>>>> ca112f8f61dd997eed763f02bcbeb37684ff021e
+
 
 
 //////////////////////////////// M A I N   M E N U ////////////////////////////////////
@@ -697,11 +696,9 @@ void tambah_persegi_panjang(){
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
-
 		   	}
 	
-
-		shapes.push_back(new Rectangle(panjang,lebar));
+  		shapes.push_back(new Rectangle(panjang,lebar));
 		cout << "data berhasil dimasukkan." << endl << endl << "silahkan tekan apa saja untuk kembali."<<endl;
 		cin>> apalah;
 		tambah_bentuk();
