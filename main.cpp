@@ -33,8 +33,8 @@ void tambah_persegi();
 void tambah_persegi_panjang();
 
 void delete_lingkaran();
-void delete_square();
-void delete_rectangle();
+void delete_persegi();
+void delete_persegi_panjang();
 void main_menu();
 
 
@@ -280,10 +280,12 @@ void hapus_bentuk()
 				hapus_bentuk();
 				break;
 			case 2:
-				cout << "hapus pers";
+				delete_persegi();
+				hapus_bentuk();
 				break;
 			case 3:
-				cout << "hapus pp";
+				delete_persegi_panjang();
+				hapus_bentuk();
 				break;
 			case 4:
 				main_menu();
@@ -703,7 +705,41 @@ void tambah_persegi(){
 }
 
 void delete_persegi(){
-	
+	fflush stdin;
+	try
+	{
+		int sisi;
+		cout<<"Masukkan sisi yang akan dihapus: "<<endl;
+		if(!(cin>>sisi))
+		{
+			cin.clear();
+			cin.ignore();
+			throw "Maaf, input yang Anda masukkan salah. Silakan coba kembali.";
+		}
+		bool cek = false;
+		for (i=0;i<shapes.size();i++)
+		{
+			if(shapes[i]->getJenisShape()=="Square")
+			{
+				if(((Square*)shapes[i])->getsisi() == sisi)
+				{
+					cek = true;
+					shapes.erase(shapes.begin()+i);
+				}
+			}
+		}
+			
+		if(!cek)
+		{
+			cout<<"Tidak ada Square dengan sisi X.";
+		}
+	}
+	catch (const char *e)
+	{
+		cerr << e << "\n\n";
+		cout << endl;
+		delete_persegi();
+	}
 }
 
 void tambah_persegi_panjang(){
@@ -711,14 +747,14 @@ void tambah_persegi_panjang(){
 	fflush stdin;
 	try
 	{
-	float panjang, lebar;
-	cout << "Masukkan panjang:" << endl;
+		float panjang, lebar;
+		cout << "Masukkan panjang:" << endl;
 		if(!(cin >> panjang && panjang>0)) {
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
 		   	}
-	cout << "Masukkan lebar:" << endl;	   	
+		cout << "Masukkan lebar:" << endl;	   	
 		if(!(cin >> lebar && lebar>0)) {
             cin.clear();
             cin.ignore();
