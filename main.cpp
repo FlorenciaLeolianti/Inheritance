@@ -42,7 +42,7 @@ int main()
 		}
 	lingkaran.close();
 	
-	cout << endl << " isi square.txt" << endl ;
+	//cout << endl << " isi square.txt" << endl ;
 	 
 	ifstream persegi("square.txt");  /// persegi
 	int sisi;
@@ -54,7 +54,7 @@ int main()
 
 	persegi.close();
 	
-	cout << endl << " isi rectangle.txt" << endl ;
+	//cout << endl << " isi rectangle.txt" << endl ;
 	 
 	ifstream persegiPanjang("rectangle.txt");  /// persegi
 	int panjang, lebar;
@@ -78,10 +78,7 @@ int main()
 		}
 
 	persegiPanjang.close();
-	
-	
-	
-	
+		
 	
 	system("CLS");
 	fflush stdin;
