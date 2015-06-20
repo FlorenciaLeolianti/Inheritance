@@ -1,7 +1,7 @@
 #include "square.h"
 Square::Square()
 {
-	Square(1);
+	panjang=0;
 }
 Square::Square(int sisi)
 {
