@@ -7,6 +7,8 @@ using namespace std;
 class Shape
 {
 	public:
+		string jenisShape;
+		string getjenisShape();	
 		float getLuas();
 		float getKeliling();
 		virtual void hitungLuas()=0; //pure virtual function

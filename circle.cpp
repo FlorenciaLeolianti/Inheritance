@@ -6,11 +6,13 @@ using namespace std;
 Circle::Circle()
 {
 	jarijari=0;
+	jenisShape="Circle";
 }
 
 Circle::Circle(int jarijariBaru)
 {
 	jarijari=jarijariBaru;
+	jenisShape="Circle";
 } 
 
 void Circle::hitungLuas()
@@ -22,3 +24,5 @@ void Circle::hitungKeliling()
 {
 	keliling=2*PI*jarijari;	
 }
+
+
