@@ -31,9 +31,13 @@ void savedata();
 void tambah_lingkaran();
 void tambah_persegi();
 void tambah_persegi_panjang();
+<<<<<<< HEAD
 void delete_lingkaran();
 void delete_square();
 void delete_rectangle();
+=======
+void main_menu();
+>>>>>>> ca112f8f61dd997eed763f02bcbeb37684ff021e
 
 
 //////////////////////////////// M A I N   M E N U ////////////////////////////////////
@@ -90,6 +94,12 @@ int main()
 		}
 
 	persegiPanjang.close();	
+	main_menu();
+	
+}
+
+void main_menu()
+{
 	system("CLS");
 	fflush stdin;
 	cout << "MENU UTAMA"<< endl;
@@ -134,7 +144,7 @@ int main()
 		cerr << e << endl << endl;
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
 		cin >> apalah;
-		main();
+		main_menu();
 	}
 }
 
@@ -173,7 +183,7 @@ void tampil_bentuk()
 				tampil_persegi_panjang();
 				break;
 			case 5:
-				main();
+				main_menu();
 				break;
 			}
 		}
@@ -224,7 +234,7 @@ void tambah_bentuk()
 				tambah_persegi_panjang();
 				break;
 			case 4:
-				main();
+				main_menu();
 				break;
 			}
 		}
@@ -274,7 +284,7 @@ void hapus_bentuk()
 				cout << "hapus pp";
 				break;
 			case 4:
-				main();
+				main_menu();
 				break;
 			}
 		}
@@ -318,6 +328,9 @@ void tampil_semua()
 				{
 					shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_semua();
 				break;
 			case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -325,6 +338,9 @@ void tampil_semua()
 				{
 					shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_semua();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -373,6 +389,9 @@ void tampil_lingkaran()
 					if(shapes[i]->getJenisShape()=="Circle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_lingkaran();
 				break;
 				case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -381,6 +400,9 @@ void tampil_lingkaran()
 					if(shapes[i]->getJenisShape()=="Circle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_lingkaran();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -429,6 +451,9 @@ void tampil_persegi()
 					if(shapes[i]->getJenisShape()=="Square")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi();
 				break;
 			case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -437,6 +462,9 @@ void tampil_persegi()
 					if(shapes[i]->getJenisShape()=="Square")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -484,6 +512,9 @@ void tampil_persegi_panjang()
 					if(shapes[i]->getJenisShape()=="Rectangle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi_panjang();
 				break;
 			case 2:
 				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
@@ -492,6 +523,9 @@ void tampil_persegi_panjang()
 					if(shapes[i]->getJenisShape()=="Rectangle")
 						shapes[i]->printDetails();
 				}
+				cout << "tekan apa saja untuk kembali" << endl;
+				cin >> apalah;
+				tampil_persegi_panjang();
 				break;
 			case 3:
 				tampil_bentuk();
@@ -546,15 +580,7 @@ void savedata()
 		}
 	}
 }
-/*
-void tambahKarakter()
-{
-	string nama;
-	string umur;
-	string alamat;
-	cout << "Masukkan Nama:";
-	cin >> nama;
-*/
+
 void tambah_lingkaran(){
 	fflush stdin;
 	try
@@ -566,8 +592,11 @@ void tambah_lingkaran(){
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
 		   	}
-		else shapes.push_back(new Circle(radius));
-	
+		else 
+		{
+		shapes.push_back(new Circle(radius));
+		tambah_bentuk();
+		}
 	}
 	catch (const char* e)
 	{
@@ -627,8 +656,11 @@ void tambah_persegi(){
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
 		   	}
-		else shapes.push_back(new Square(sisi));
-	
+		else 
+		{
+		shapes.push_back(new Square(sisi));
+		tambah_bentuk();
+		}
 	}
 	catch (const char* e)
 	{
@@ -653,16 +685,21 @@ void tambah_persegi_panjang(){
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
 		   	}
-		else 
-		{
-			if(!(cin >> panjang)) {
+	cout << "Masukkan lebar:" << endl;	   	
+		if(!(cin >> lebar)) {
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
+<<<<<<< HEAD
 		   	}
 		}
+=======
+		   		}
+		
+>>>>>>> ca112f8f61dd997eed763f02bcbeb37684ff021e
 		
 		shapes.push_back(new Rectangle(panjang,lebar));
+		tambah_bentuk();
 	
 	}
 	catch (const char* e)
