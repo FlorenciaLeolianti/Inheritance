@@ -5,7 +5,7 @@
 #include "shape.h"
 using namespace std;
 
-class Rectangle:Shape
+class Rectangle : public Shape
 {
 	public: 
 		Rectangle();
