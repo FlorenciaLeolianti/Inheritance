@@ -5,5 +5,5 @@ class Square : Rectangle
 {
 	Square();
 	Square(int sisi);
-}
+};
 #endif
