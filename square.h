@@ -4,6 +4,6 @@
 class Square : Rectangle
 {
 	Square();
-	Square(float sisi);
+	Square(int sisi);
 }
 #endif
