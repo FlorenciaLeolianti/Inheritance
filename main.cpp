@@ -574,12 +574,13 @@ void savedata()
 }
 
 void tambah_lingkaran(){
+	system("CLS");
 	fflush stdin;
 	try
 	{
 	float radius;
 	cout << "Masukkan Jari-jari:" << endl;
-		if(!(cin >> radius)) {
+		if(!(cin >> radius && radius>0)) {
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
@@ -587,6 +588,8 @@ void tambah_lingkaran(){
 		else 
 		{
 		shapes.push_back(new Circle(radius));
+		cout << "data berhasil dimasukkan." << endl << endl << "silahkan tekan apa saja untuk kembali."<<endl;
+		cin >> apalah;
 		tambah_bentuk();
 		}
 	}
@@ -600,12 +603,13 @@ void tambah_lingkaran(){
 }
 
 void tambah_persegi(){
+	system("CLS");
 	fflush stdin;
 	try
 	{
 	float sisi;
 	cout << "Masukkan Sisi:" << endl;
-		if(!(cin >> sisi)) {
+		if(!(cin >> sisi && sisi>0)) {
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
@@ -613,6 +617,8 @@ void tambah_persegi(){
 		else 
 		{
 		shapes.push_back(new Square(sisi));
+		cout << "data berhasil dimasukkan." << endl << endl << "silahkan tekan apa saja untuk kembali."<<endl;
+		cin >> apalah;
 		tambah_bentuk();
 		}
 	}
@@ -625,25 +631,26 @@ void tambah_persegi(){
 }
 
 void tambah_persegi_panjang(){
+	system("CLS");
 	fflush stdin;
 	try
 	{
 	float panjang, lebar;
 	cout << "Masukkan panjang:" << endl;
-		if(!(cin >> panjang)) {
+		if(!(cin >> panjang && panjang>0)) {
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
 		   	}
 	cout << "Masukkan lebar:" << endl;	   	
-		if(!(cin >> lebar)) {
+		if(!(cin >> lebar && lebar>0)) {
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
 		   		}
-		
-		
 		shapes.push_back(new Rectangle(panjang,lebar));
+		cout << "data berhasil dimasukkan." << endl << endl << "silahkan tekan apa saja untuk kembali."<<endl;
+		cin>> apalah;
 		tambah_bentuk();
 	
 	}
