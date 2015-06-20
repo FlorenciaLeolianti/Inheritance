@@ -31,6 +31,9 @@ void savedata();
 void tambah_lingkaran();
 void tambah_persegi();
 void tambah_persegi_panjang();
+void delete_lingkaran();
+void delete_square();
+void delete_rectangle();
 
 
 //////////////////////////////// M A I N   M E N U ////////////////////////////////////
@@ -117,6 +120,7 @@ int main()
 			case 4:
 				savedata();
 				cout << "Terima Kasih";
+				exit(0);
 				break;
 			}
 		}
@@ -260,7 +264,8 @@ void hapus_bentuk()
 			switch (pil)
 			{
 			case 1:
-				cout << "hapus link";
+				delete_lingkaran();
+				hapus_bentuk();
 				break;
 			case 2:
 				cout << "hapus pers";
@@ -570,7 +575,45 @@ void tambah_lingkaran(){
 		cout << endl;
 		tambah_lingkaran();
 	}
+}
 
+void delete_lingkaran()
+{
+	fflush stdin;
+	try
+	{
+		int radius;
+		cout<<"Masukkan jari-jari yang akan dihapus: "<<endl;
+		if(!(cin>>radius))
+		{
+			cin.clear();
+			cin.ignore();
+			throw "Maaf, input yang Anda masukkan salah. Silakan coba kembali.";
+		}
+		bool cek = false;
+		for (i=0;i<shapes.size();i++)
+		{
+			if(shapes[i]->getJenisShape()=="Circle")
+			{
+				if(((Circle*)shapes[i])->getjarijari() == radius)
+				{
+					cek = true;
+					shapes.erase(shapes.begin()+i);
+				}
+			}
+		}
+			
+		if(!cek)
+		{
+			cout<<"Tidak ada Circle dengan jari-jari X.";
+		}
+	}
+	catch (const char *e)
+	{
+		cerr << e << "\n\n";
+		cout << endl;
+		delete_lingkaran();
+	}
 }
 
 void tambah_persegi(){
@@ -595,6 +638,10 @@ void tambah_persegi(){
 	}
 }
 
+void delete_persegi(){
+	
+}
+
 void tambah_persegi_panjang(){
 	fflush stdin;
 	try
@@ -612,7 +659,7 @@ void tambah_persegi_panjang(){
             cin.clear();
             cin.ignore();
             throw "Maaf, input yang anda masukkan salah. Silakan coba kembali." ;
-		   		}
+		   	}
 		}
 		
 		shapes.push_back(new Rectangle(panjang,lebar));
@@ -624,4 +671,8 @@ void tambah_persegi_panjang(){
 		cout << endl;
 		tambah_persegi_panjang();
 	}
+}
+
+void delete_persegi_panjang(){
+	
 }
