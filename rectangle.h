@@ -13,6 +13,8 @@ class Rectangle: public Shape
 		void hitungLuas();
 		void hitungKeliling();
 		void printDetails();
+		int getpanjang();
+		int getlebar();
 	protected:
 		int panjang;
 		int lebar;

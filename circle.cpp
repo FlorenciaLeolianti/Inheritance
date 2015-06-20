@@ -38,4 +38,9 @@ void Circle::printDetails()
 	cout<<endl;
 }
 
+int Circle :: getjarijari()
+{
+	return jarijari;
+}
+
 

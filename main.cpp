@@ -27,6 +27,7 @@ void tampil_semua();
 void tampil_lingkaran();
 void tampil_persegi();
 void tampil_persegi_panjang();
+void savedata();
 
 
 //////////////////////////////// M A I N   M E N U ////////////////////////////////////
@@ -111,6 +112,7 @@ int main()
 				hapus_bentuk();
 				break;
 			case 4:
+				savedata();
 				cout << "Terima Kasih";
 				break;
 			}
@@ -469,6 +471,41 @@ void tampil_persegi_panjang()
 		cout << "Tekan Apa Saja Untuk Kembali." << endl;
 		cin >> apalah;
 		hapus_bentuk();
+	}
+}
+
+void savedata()
+{
+	ofstream of;
+	of.open("circle.txt");
+	of.close();
+	of.open("square.txt");
+	of.close();
+	of.open("rectangle.txt");
+	of.close();
+	for(i=0;i<shapes.size();i++)
+	{
+		
+		if(shapes[i]->getJenisShape()=="Circle")
+		{
+			of.open("circle.txt", ofstream::out | ofstream::app);
+			of<<((Circle *)shapes[i])->getjarijari()<<endl;
+			of.close();
+		}
+		
+		else if(shapes[i]->getJenisShape()=="Square")
+		{
+			of.open("square.txt", ofstream::out | ofstream::app);
+			of<<((Square*)shapes[i])->getsisi()<<endl;
+			of.close();
+		}
+		
+		else if(shapes[i]->getJenisShape()=="Rectangle")
+		{
+			of.open("rectangle.txt", ofstream::out | ofstream::app);
+			of<<((Rectangle*)shapes[i])->getpanjang()<<"\t"<<((Rectangle*)shapes[i])->getlebar()<<endl;
+			of.close();
+		}
 	}
 }
 /*

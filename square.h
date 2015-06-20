@@ -5,8 +5,9 @@
 class Square : public Rectangle
 {
 	public:
-	Square();
-	Square(int sisi);
-	void printDetails();
+		Square();
+		Square(int sisi);
+		void printDetails();
+		int getsisi();
 };
 #endif

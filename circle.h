@@ -14,6 +14,7 @@ class Circle : public Shape
 		void hitungLuas();
 		void hitungKeliling();
 		void printDetails();
+		int getjarijari();
 	protected:
 		int jarijari;
 };

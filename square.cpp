@@ -22,3 +22,8 @@ void Square::printDetails()
 	cout<<"   "<<"Keliling: "<<keliling<<endl;
 	cout<<endl;
 }
+
+int Square :: getsisi()
+{
+	return panjang;
+}

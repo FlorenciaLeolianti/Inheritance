@@ -35,3 +35,13 @@ void Rectangle::printDetails()
 	cout<<"   "<<"Keliling: "<<keliling<<endl;
 	cout<<endl;
 }
+
+int Rectangle::getpanjang()
+{
+	return panjang;
+}
+
+int Rectangle::getlebar()
+{
+	return lebar;
+}
