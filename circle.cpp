@@ -6,23 +6,17 @@ using namespace std;
 Circle::Circle()
 {
 	jarijari=0;
-<<<<<<< HEAD
 	jenisShape="Circle";
-=======
-	hitungLuas():
+	hitungLuas();
 	hitungKeliling();
->>>>>>> origin/master
 }
 
 Circle::Circle(int jarijariBaru)
 {
 	jarijari=jarijariBaru;
-<<<<<<< HEAD
 	jenisShape="Circle";
-=======
 	hitungLuas();
 	hitungKeliling();
->>>>>>> origin/master
 } 
 
 void Circle::hitungLuas()

@@ -7,23 +7,17 @@ using namespace std;
 Rectangle::Rectangle(){
 	panjang=0;
 	lebar=0;
-<<<<<<< HEAD
 	jenisShape="Rectangle";
-=======
-	hitungLuas():
+	hitungLuas();
 	hitungKeliling();
->>>>>>> origin/master
 }
 
 Rectangle::Rectangle(int panjangBaru, int lebarBaru){
 	panjang=panjangBaru;
 	lebar=lebarBaru;
-<<<<<<< HEAD
 	jenisShape="Rectangle";
-=======
-	hitungLuas():
+	hitungLuas();
 	hitungKeliling();
->>>>>>> origin/master
 }
 
 void Rectangle::hitungLuas(){
