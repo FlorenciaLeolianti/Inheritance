@@ -356,11 +356,21 @@ void tampil_lingkaran()
 			int pil = atoi(input.c_str());
 			switch (pil)
 			{
-			case 1:
-				cout << "luas lingkaran";
+				case 1:
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByLuas);
+				for(i=0;i<shapes.size();i++)
+				{
+					if(shapes[i]->getJenisShape()=="Circle")
+						shapes[i]->printDetails();
+				}
 				break;
-			case 2:
-				cout << "keliling lingkaran";
+				case 2:
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
+				for(i=0;i<shapes.size();i++)
+				{
+					if(shapes[i]->getJenisShape()=="Circle")
+						shapes[i]->printDetails();
+				}
 				break;
 			case 3:
 				tampil_bentuk();
@@ -403,10 +413,20 @@ void tampil_persegi()
 			switch (pil)
 			{
 			case 1:
-				cout << "luas persegi";
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByLuas);
+				for(i=0;i<shapes.size();i++)
+				{
+					if(shapes[i]->getJenisShape()=="Square")
+						shapes[i]->printDetails();
+				}
 				break;
 			case 2:
-				cout << "keliling persegi";
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
+				for(i=0;i<shapes.size();i++)
+				{
+					if(shapes[i]->getJenisShape()=="Square")
+						shapes[i]->printDetails();
+				}
 				break;
 			case 3:
 				tampil_bentuk();
@@ -448,10 +468,20 @@ void tampil_persegi_panjang()
 			switch (pil)
 			{
 			case 1:
-				cout << "luas persegi panjang";
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByLuas);
+				for(i=0;i<shapes.size();i++)
+				{
+					if(shapes[i]->getJenisShape()=="Rectangle")
+						shapes[i]->printDetails();
+				}
 				break;
 			case 2:
-				cout << "keliling persegi panjang";
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
+				for(i=0;i<shapes.size();i++)
+				{
+					if(shapes[i]->getJenisShape()=="Rectangle")
+						shapes[i]->printDetails();
+				}
 				break;
 			case 3:
 				tampil_bentuk();
