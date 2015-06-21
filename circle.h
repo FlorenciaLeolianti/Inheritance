@@ -13,6 +13,7 @@ class Circle : public Shape
 		Circle(int jarijariBaru);
 		void hitungLuas();
 		void hitungKeliling();
+		void printDetails();
 	protected:
 		int jarijari;
 };

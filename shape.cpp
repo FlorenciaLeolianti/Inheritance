@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string Shape::getjenisShape(){
+string Shape::getJenisShape(){
 	return jenisShape;
 }
 
@@ -15,13 +15,13 @@ float Shape::getKeliling(){
 	return keliling;
 }
 
-bool sortByLuas(Shape *a, Shape *b)
+bool Shape::sortByLuas(Shape *a, Shape *b)
 {
 	a->hitungLuas();
 	b->hitungLuas();
 	return a->getLuas()<b->getLuas();
 }
-bool sortByKeliling(Shape *a, Shape *b)
+bool Shape::sortByKeliling(Shape *a, Shape *b)
 {
 	a->hitungKeliling();
 	b->hitungKeliling();

@@ -26,3 +26,12 @@ void Rectangle::hitungLuas(){
 void Rectangle::hitungKeliling(){
 	keliling=2*(panjang+lebar);
 }
+void Rectangle::printDetails()
+{
+	cout<<jenisShape<<": "<<endl;
+	cout<<"   "<<"Panjang: "<<panjang<<endl;
+	cout<<"   "<<"Lebar: "<<lebar<<endl;
+	cout<<"   "<<"Luas: "<<luas<<endl;
+	cout<<"   "<<"Keliling: "<<keliling<<endl;
+	cout<<endl;
+}

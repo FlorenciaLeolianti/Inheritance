@@ -7,5 +7,6 @@ class Square : public Rectangle
 	public:
 	Square();
 	Square(int sisi);
+	void printDetails();
 };
 #endif

@@ -8,12 +8,12 @@ class Shape
 {
 	public:
 		string jenisShape;
-		string getjenisShape();	
+		string getJenisShape();	
 		float getLuas();
 		float getKeliling();
 		virtual void hitungLuas()=0; //pure virtual function
 		virtual void hitungKeliling()=0;
-		
+		virtual void printDetails()=0;
 		//Untuk sorting:
 		static bool sortByLuas(Shape *a, Shape *b);
 		static bool sortByKeliling(Shape *a, Shape *b);

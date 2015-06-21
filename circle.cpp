@@ -29,4 +29,13 @@ void Circle::hitungKeliling()
 	keliling=2*PI*jarijari;	
 }
 
+void Circle::printDetails()
+{
+	cout<<jenisShape<<": "<<endl;
+	cout<<"   "<<"Jari-jari: "<<jarijari<<endl;
+	cout<<"   "<<"Luas: "<<luas<<endl;
+	cout<<"   "<<"Keliling: "<<keliling<<endl;
+	cout<<endl;
+}
+
 

@@ -17,7 +17,7 @@ using namespace std;
 string input;
 string apalah;
 vector <Shape *> shapes;
-
+int i; //All purpose iterator
 
 int main();
 void tampil_bentuk();
@@ -194,7 +194,6 @@ void tambah_bentuk()
 	cout << "3. Tambah Persegi Panjang" << endl;
 	cout << "4. Kembali ke Menu Utama" << endl;
 	cout << "Silahkan Masukkan pilihan Anda (1-4): " << endl;
-	
 	cin >> input;
 	cout << endl;
 	
@@ -294,7 +293,7 @@ void tampil_semua()
 	cout << "2. Urutkan Berdasarkan Keliling" << endl;
 	cout << "3. Kembali ke Menu Tampilkan Bentuk" << endl;
 	cout << "Silahkan Masukkan pilihan Anda (1-4): " << endl;
-	
+	cin  >> input;
 	try
 	{
 		if (input.compare("1") == 0 || input.compare("2") == 0 || input.compare("3") == 0)
@@ -303,10 +302,19 @@ void tampil_semua()
 			switch (pil)
 			{
 			case 1:
-				cout << "luas semua";
+				//cout << "luas semua";
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByLuas);
+				for(i=0;i<shapes.size();i++)
+				{
+					shapes[i]->printDetails();
+				}
 				break;
 			case 2:
-				cout << "keliling semua";
+				sort(shapes.begin(),shapes.begin()+shapes.size(),Shape::sortByKeliling);
+				for(i=0;i<shapes.size();i++)
+				{
+					shapes[i]->printDetails();
+				}
 				break;
 			case 3:
 				tampil_bentuk();
