@@ -1,11 +1,12 @@
 #include <cstdio>
 #include <iostream>
-#include <windows.h>
+//#include <windows.h>
 #include <string>
 #include <cstdlib>
 #include <algorithm>
 #include <cctype>
 #include <vector>
+#include <fstream>
 
 #include "shape.h"
 #include "rectangle.h"
@@ -36,9 +37,10 @@ int main()
 	string line;
 	while (lingkaran>>radius)
 		{
-			Circle cir;
-			cir = Circle (radius);
+			//Circle cir;
+			//cir = Circle (radius);
 			//cout << radius << '\n'; // tes load file
+			shapes.push_back(new Circle(radius));
 		}
 	lingkaran.close();
 	
@@ -48,8 +50,9 @@ int main()
 	int sisi;
 	while (persegi>>sisi)
 		{
-			Square s(sisi);
+			//Square s(sisi);
 			//cout << sisi << '\n'; // tes load file
+			shapes.push_back(new Square(sisi));
 		}
 
 	persegi.close();
@@ -70,16 +73,16 @@ int main()
 			{
 				lebar=sisi;
 				cek = true;
+				shapes.push_back(new Rectangle(panjang,lebar));
 			}
 			
-			Rectangle rect;
-			rect = Rectangle(panjang, lebar);
+			
+			//Rectangle rect;
+			//rect = Rectangle(panjang, lebar);
 			//cout << panjang << '\t' << lebar << '\n'; // tes load file
 		}
 
-	persegiPanjang.close();
-		
-	
+	persegiPanjang.close();	
 	system("CLS");
 	fflush stdin;
 	cout << "MENU UTAMA"<< endl;
@@ -191,9 +194,11 @@ void tambah_bentuk()
 	cout << "3. Tambah Persegi Panjang" << endl;
 	cout << "4. Kembali ke Menu Utama" << endl;
 	cout << "Silahkan Masukkan pilihan Anda (1-4): " << endl;
+	
 	cin >> input;
 	cout << endl;
-
+	
+	
 	try
 	{
 		if (input.compare("1") == 0 || input.compare("2") == 0 || input.compare("3") == 0 || input.compare("4") == 0 )
@@ -289,9 +294,7 @@ void tampil_semua()
 	cout << "2. Urutkan Berdasarkan Keliling" << endl;
 	cout << "3. Kembali ke Menu Tampilkan Bentuk" << endl;
 	cout << "Silahkan Masukkan pilihan Anda (1-4): " << endl;
-	cin >> input;
-	cout << endl;
-
+	
 	try
 	{
 		if (input.compare("1") == 0 || input.compare("2") == 0 || input.compare("3") == 0)
