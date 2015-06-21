@@ -27,13 +27,10 @@ void tampil_semua();
 void tampil_lingkaran();
 void tampil_persegi();
 void tampil_persegi_panjang();
-<<<<<<< HEAD
 void savedata();
-=======
 void tambah_lingkaran();
 void tambah_persegi();
 void tambah_persegi_panjang();
->>>>>>> 87d573bd8ca4c053dc6e7b3da8e23c35eb024972
 
 
 //////////////////////////////// M A I N   M E N U ////////////////////////////////////
@@ -510,7 +507,6 @@ void tampil_persegi_panjang()
 	}
 }
 
-<<<<<<< HEAD
 void savedata()
 {
 	ofstream of;
@@ -553,10 +549,9 @@ void tambahKarakter()
 	string alamat;
 	cout << "Masukkan Nama:";
 	cin >> nama;
-=======
+*/
 void tambah_lingkaran(){
 	fflush stdin;
->>>>>>> 87d573bd8ca4c053dc6e7b3da8e23c35eb024972
 	try
 	{
 	float radius;
